@@ -1,0 +1,63 @@
+/* Tailwind v4 entry */
+@import "tailwindcss";
+
+/* ---- Theme tokens (v4) ---- */
+@theme {
+  --font-sans: "Inter", system-ui, Arial, sans-serif;
+
+  --color-brand: #27c34a;
+  --color-brand-dark: #0b0b0b;
+  --color-brand-light: #f7f7f7;
+
+  --radius-xl2: 1.25rem;
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* App frame */
+html,
+body,
+#root {
+  height: 100%;
+  background: #fff;
+}
+body {
+  @apply font-sans text-[13px] leading-snug text-neutral-900;
+}
+#app {
+  @apply max-w-[420px] mx-auto;
+}
+
+/* Reusable utilities (no @layer in v4 – just write classes) */
+.chip {
+  @apply inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs shadow-[var(--shadow-soft)];
+}
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg bg-[--color-brand] px-4 py-2 text-white font-medium active:scale-[.98];
+}
+.icon-btn {
+  @apply grid place-items-center w-9 h-9 rounded-full bg-white shadow-[var(--shadow-soft)] border border-neutral-100;
+}
+.card {
+  @apply rounded-2xl border border-neutral-100 bg-white shadow-[var(--shadow-soft)];
+}
+.section {
+  @apply px-3;
+}
+.section-title {
+  @apply flex items-center justify-between px-3 mb-2;
+}
+.section-title h3 {
+  @apply font-semibold text-[13px] tracking-wide;
+}
+.link-muted {
+  @apply text-neutral-500 text-[11px];
+}
+
+/* Optional: hide native scrollbars on touch rails */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
